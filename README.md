@@ -1,5 +1,14 @@
 ## kiss gate
 
+[![MIT licensed][1]][2]
+[![Go Report Card][3]][4]
+
+[1]: https://img.shields.io/badge/license-MIT-blue.svg
+[2]: LICENSE.md
+[3]: https://goreportcard.com/badge/github.com/nothollyhigh/kissgate
+[4]: https://goreportcard.com/report/github.com/nothollyhigh/kissgate
+
+
 - kiss/net 网关，反代 tcp、websocket 协议到后端 tcp 线路，
 
 - 支持线路检测、负载均衡、realip等，详见源码
