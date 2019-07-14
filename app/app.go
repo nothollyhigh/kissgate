@@ -71,7 +71,7 @@ func Run(version string) {
 
 	proxyMgr.InitPorxy()
 
-	connMgr.StartDataFlowRecord(time.Second * 10)
+	connMgr.StartDataFlowRecord(time.Second * 60)
 }
 
 func Stop() {

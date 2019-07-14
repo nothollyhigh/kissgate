@@ -18,16 +18,12 @@ var (
 	websocketAddr = "ws://localhost:20000/gate/ws"
 )
 
-func onConnected(c *net.TcpClient) {
-	log.Info("TcpClient OnConnected")
-}
-
 func onTcpEcho(client *net.TcpClient, msg net.IMessage) {
 	log.Debug("tcp client onEcho from %v: %v", client.Conn.RemoteAddr().String(), string(msg.Body()))
 }
 
 func onWebsocketEcho(client *net.WSClient, msg net.IMessage) {
-	log.Debug("tcp client onEcho from %v: %v", client.Conn.RemoteAddr().String(), string(msg.Body()))
+	log.Debug("websocket client onEcho from %v: %v", client.Conn.RemoteAddr().String(), string(msg.Body()))
 }
 
 func main() {
@@ -44,7 +40,7 @@ func main() {
 			go func(idx int) {
 				defer wg.Done()
 
-				client, err := net.NewTcpClient(tcpAddr, netengine, nil, autoReconn, onConnected)
+				client, err := net.NewTcpClient(tcpAddr, netengine, nil, autoReconn, nil)
 				if err != nil {
 					log.Panic("NewTcpClient failed: %v, %v", client, err)
 				}
