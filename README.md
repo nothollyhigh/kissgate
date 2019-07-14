@@ -66,4 +66,8 @@ cd kissgate/example
 go run gateclient.go
 ```
 
-- 观察网关、客户端、服务器日志
+- 观察网关、客户端、服务器日志，代码详见
+
+1. [server](https://github.com/nothollyhigh/kissgate/blob/master/example/tcpserver.go)
+
+2. [client](https://github.com/nothollyhigh/kissgate/blob/master/example/gateclient.go)
