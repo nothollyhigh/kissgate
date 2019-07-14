@@ -42,3 +42,28 @@
     </proxy>
 </setting>
 ```
+
+
+## 示例
+
+-  使用上面示例的配置启动网关
+
+```sh
+kissgate -config="config.xml"
+```
+
+- 启动后端tcp服务器，tcp/websocket各两个端口
+
+```
+cd kissgate/example
+go run tcpserver.go
+```
+
+- 启动测试用客户端
+
+```
+cd kissgate/example
+go run gateclient.go
+```
+
+- 观察网关、客户端、服务器日志
